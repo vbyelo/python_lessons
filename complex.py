@@ -1,3 +1,5 @@
+#  https://pl.wikipedia.org/wiki/Liczby_urojone
+
 import math
 
 class Complex:
