@@ -3,10 +3,16 @@
 import math
 def find_roots(*args):
     print('typ parametrów', type(args), 'wartosci', args)
-     
-    a = args[0]
-    b = args[1]
-    c = args[2]
+
+    if len(args) == 3: 
+        a, b, c = args
+    elif len(args) > 3:
+        a, b, c, *_ = args
+    else:
+        print('Wrong argument number')
+        return 
+
+    print(f'coefficients a={a}, b={b}, c={c}')
     
     determinant =b**2 -4*a*c
     if determinant >0:
@@ -20,4 +26,4 @@ def find_roots(*args):
         return 'nie ma rozwiązań'
 
 
-print(find_roots(1,2,1,3))
+print(find_roots(1, 2, 1))
