@@ -1,6 +1,7 @@
 from mimesis import Person
 import random
 
+
 class Employer:
     def __init__(self, days_per_week, position, coef, name):
         self.days_per_week = days_per_week
@@ -9,7 +10,7 @@ class Employer:
         self.name = name
 
     def get_salary(self):
-        return 4 * self.days_per_week * self.coef
+        return round(4 * self.days_per_week * self.coef, 2)
 
     def __str__(self):
         return f"{self.name} jest {self.position} pracuje {self.days_per_week} dni w tygodniu"
@@ -22,12 +23,14 @@ class Accounter(Employer):
         self.coef = 0.5
         self.name = name
 
+
 class Chief(Employer):
     def __init__(self, name):
         self.days_per_week = 4
         self.position = "chief"
         self.coef = 1.2
         self.name = name
+
 
 class Cleaner(Employer):
     def __init__(self, name):
@@ -37,17 +40,13 @@ class Cleaner(Employer):
         self.name = name
 
 
-
 if __name__ == "__main__":
-
-
 
     pracownicy = []
 
-
     for i in range(100):
-        person = Person('pl')
-        position = random.randint(0,3)
+        person = Person("pl")
+        position = random.randint(0, 3)
         if position == 0:
             pracownik = Accounter(name=person.full_name())
         elif position == 1:
@@ -55,9 +54,12 @@ if __name__ == "__main__":
         else:
             pracownik = Cleaner(name=person.full_name())
 
+        pracownik.coef = random.random()
         pracownicy.append(pracownik)
-        print(pracownicy[-1])
 
+    for pracownik in pracownicy:
+
+        print(pracownik, pracownik.get_salary())
 
 
 
