@@ -1,5 +1,7 @@
-        
-        class Employer:
+from mimesis import Person
+import random
+
+class Employer:
     def __init__(self, days_per_week, position, coef, name):
         self.days_per_week = days_per_week
         self.position = position
@@ -35,25 +37,28 @@ class Cleaner(Employer):
         self.name = name
 
 
-    # def get_salary(self):
-    #     return 4 * self.days_per_week * self.coef + 100
-
 
 if __name__ == "__main__":
 
 
-    accounter1 = Accounter(name="Aria Stark")
-    accounter2 = Accounter(name="The Hound")
 
-    chief1 = Chief(name='Jaimy Lannister')
-    chief2 = Chief(name='Tara Greyjoy')
+    pracownicy = []
 
-    cleaner1 = Cleaner(name='Ayron Targarian')
-    cleaner2 = Cleaner(name='Tyrian Lannister')
 
-    pracownicy = [accounter1,accounter2,chief1,chief2,cleaner1,cleaner2]
+    for i in range(100):
+        person = Person('pl')
+        position = random.randint(0,3)
+        if position == 0:
+            pracownik = Accounter(name=person.full_name())
+        elif position == 1:
+            pracownik = Chief(name=person.full_name())
+        else:
+            pracownik = Cleaner(name=person.full_name())
 
-    for pracownik in pracownicy:
-        print(pracownik)
+        pracownicy.append(pracownik)
+        print(pracownicy[-1])
+
+
+
 
 
