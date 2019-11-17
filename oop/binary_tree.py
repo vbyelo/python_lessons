@@ -16,10 +16,19 @@ class Node:
 # Node = collections.namedtuple('Node', ['left', 'right', 'value'])
 
 def contains(root, value):
-    print('root:', root)
-    print('right:', root.right)
-    print('left:', root.left)
-    pass
+    if root.value == value:
+        return True
+    elif root.value < value:
+        if root.right is None:
+            return False
+        else:
+            return contains(root.right, value)
+
+    else:
+        if root.left is None:
+            return False
+        else:
+            return contains(root.left, value)
 
 n1 = Node(value=1, left=None, right=None)
 n4 = Node(value=4, left=None, right=None)
