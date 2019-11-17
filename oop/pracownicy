@@ -10,7 +10,7 @@
         return 4 * self.days_per_week * self.coef
 
     def __str__(self):
-        return f"{self.name} jest {self.position} pracuje {self.days_per_week} w tygodniu"
+        return f"{self.name} jest {self.position} pracuje {self.days_per_week} dni w tygodniu"
 
 
 class Accounter(Employer):
