@@ -5,7 +5,6 @@
 import collections
 
 class Node:
-
     def __init__(self, value, right, left):
         self.value = value
         self.right = right
@@ -15,7 +14,6 @@ class Node:
 
 def contains(root, value):
     pass
-
 
 n1 = Node(value=1, left=None, right=None)
 n4 = Node(value=4, left=None, right=None)
@@ -29,4 +27,4 @@ n8 = Node(value=8, left=n13, right=n10)
         
 print(contains(n8, 1))
         
-print(contains(n2, 1))
+
