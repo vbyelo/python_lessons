@@ -1,0 +1,59 @@
+        
+        class Employer:
+    def __init__(self, days_per_week, position, coef, name):
+        self.days_per_week = days_per_week
+        self.position = position
+        self.coef = coef
+        self.name = name
+
+    def get_salary(self):
+        return 4 * self.days_per_week * self.coef
+
+    def __str__(self):
+        return f"{self.name} jest {self.position} pracuje {self.days_per_week} w tygodniu"
+
+
+class Accounter(Employer):
+    def __init__(self, name):
+        self.days_per_week = 5
+        self.position = "accounter"
+        self.coef = 0.5
+        self.name = name
+
+class Chief(Employer):
+    def __init__(self, name):
+        self.days_per_week = 4
+        self.position = "chief"
+        self.coef = 1.2
+        self.name = name
+
+class Cleaner(Employer):
+    def __init__(self, name):
+        self.days_per_week = 6
+        self.position = "cleaner"
+        self.coef = 0.6
+        self.name = name
+
+
+    # def get_salary(self):
+    #     return 4 * self.days_per_week * self.coef + 100
+
+
+if __name__ == "__main__":
+
+
+    accounter1 = Accounter(name="Aria Stark")
+    accounter2 = Accounter(name="The Hound")
+
+    chief1 = Chief(name='Jaimy Lannister')
+    chief2 = Chief(name='Tara Greyjoy')
+
+    cleaner1 = Cleaner(name='Ayron Targarian')
+    cleaner2 = Cleaner(name='Tyrian Lannister')
+
+    pracownicy = [accounter1,accounter2,chief1,chief2,cleaner1,cleaner2]
+
+    for pracownik in pracownicy:
+        print(pracownik)
+
+
