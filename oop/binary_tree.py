@@ -9,10 +9,16 @@ class Node:
         self.value = value
         self.right = right
         self.left = left
+       
+    def __str__(self):
+        return f'Node {self.value}'
 
 # Node = collections.namedtuple('Node', ['left', 'right', 'value'])
 
 def contains(root, value):
+    print('root:', root)
+    print('right:', root.right)
+    print('left:', root.left)
     pass
 
 n1 = Node(value=1, left=None, right=None)
